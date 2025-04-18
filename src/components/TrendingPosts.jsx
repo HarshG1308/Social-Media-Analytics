@@ -14,7 +14,7 @@ function TrendingPosts() {
         
         // Fetch all required data
         const [postsData, commentsData, usersData] = await Promise.all([
-          getPosts(),
+          getPosts(1),
           getComments(),
           getUsers()
         ]);

@@ -20,7 +20,9 @@ function Feed() {
 
       if (initialLoad || Object.keys(userMap).length === 0) {
         const usersData = await getUsers();
-        const mappedUsers = usersData.reduce((acc, user) => {
+        
+        
+        const mappedUsers = Object.keys(usersData).reduce((acc, user) => {
           acc[user.id] = user;
           return acc;
         }, {});

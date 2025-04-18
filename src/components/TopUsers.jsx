@@ -15,11 +15,13 @@ function TopUsers() {
         
         // Fetch all required data
         const [postsData, commentsData, usersData] = await Promise.all([
-          getPosts(),
+          getPosts(1),
           getComments(),
           getUsers()
         ]);
-        
+
+        console.log(usersData)
+
         // Count comments per post
         const commentCountByPost = commentsData.reduce((acc, comment) => {
           acc[comment.postId] = (acc[comment.postId] || 0) + 1;
